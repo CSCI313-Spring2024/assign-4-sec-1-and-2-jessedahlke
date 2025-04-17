@@ -1,0 +1,66 @@
+<div style="margin-top: 10px" class="container">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Edit Contact</h4>
+
+      <form class="ng-untouched ng-pristine ng-valid">
+        <div style="margin-bottom: 10px" class="form-group row">
+          <label for="firstName" class="col-sm-2 col-form-label"
+            >First Name</label
+          >
+          <div class="col-sm-10">
+            <input
+              [value]="editCompService.fNameCurrent"
+              type="text"
+              id="firstName"
+              class="form-control"
+              #newFN
+            />
+          </div>
+        </div>
+        <div style="margin-bottom: 10px" class="form-group row">
+          <label for="lastName" class="col-sm-2 col-form-label"
+            >Last Name</label
+          >
+          <div class="col-sm-10">
+            <input
+              [value]="editCompService.lNameCurrent"
+              type="text"
+              id="lastName"
+              class="form-control"
+              #newLN
+            />
+          </div>
+        </div>
+        <div style="margin-bottom: 10px" class="form-group row">
+          <label for="phoneNumber" class="col-sm-2 col-form-label"
+            >Phone Number</label
+          >
+          <div class="col-sm-10">
+            <input
+              [value]="editCompService.phoneNumCurrent"
+              type="text"
+              id="phoneNumber"
+              class="form-control"
+              #newPN
+            />
+          </div>
+        </div>
+      </form>
+
+      <div>
+        <button
+          style="margin-right: 10px"
+          class="btn btn-success"
+          routerLink=""
+          (click)="
+            editCompService.editContact(newFN.value, newLN.value, newPN.value)
+          "
+        >
+          Submit Changes
+        </button>
+        <button class="btn btn-warning" routerLink="">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
